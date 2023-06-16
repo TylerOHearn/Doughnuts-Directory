@@ -3,6 +3,7 @@ package com.sample.app
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.R
@@ -30,6 +31,7 @@ class RecyclerViewAdapter (private var cast: ArrayList<RelatedTopic>) : Recycler
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         cast[position].let {
             holder.name.text = StringUtil.formatTitle(it.text)
+            //Picasso.get().load(R.drawable.sprinkles_medium_pink).centerCrop().fit().into(holder.background)
 
             holder.itemView.setOnClickListener {
                 if (onClickListener != null) {
@@ -49,5 +51,6 @@ class RecyclerViewAdapter (private var cast: ArrayList<RelatedTopic>) : Recycler
 
     class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
         val name: TextView = itemview.findViewById(R.id.character_name)
+        val background: ImageView = itemview.findViewById(R.id.card_view_image_view)
     }
 }

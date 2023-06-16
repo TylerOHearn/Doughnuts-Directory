@@ -1,26 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    android:layout_marginBottom="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp">
+    android:layout_marginTop="12dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginBottom="12dp">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/doughnut_background_yellow">
+
+        <ImageView
+            android:id="@+id/card_view_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constrainedHeight="true"
+            app:layout_constrainedWidth="false"
+            app:layout_constraintEnd_toEndOf="@id/character_name"
+            app:layout_constraintStart_toStartOf="@id/character_name"
+            app:layout_constraintBottom_toBottomOf="@id/character_name"
+            app:layout_constraintTop_toTopOf="@id/character_name"/>
 
         <TextView
+            android:id="@+id/character_name"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/character_name"
-            android:layout_gravity="center"
-            android:textSize="22sp">
-        </TextView>
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Homer Simpson"/>
 
-    </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

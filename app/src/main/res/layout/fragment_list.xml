@@ -7,13 +7,14 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_purple"
+        android:background="@color/doughnut_background_yellow"
         tools:context=".app.ListFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/cast"/>
+            android:id="@+id/cast"
+            android:background="@drawable/sprinkles_medium_pink"/>
 
     </FrameLayout>
 </layout>
