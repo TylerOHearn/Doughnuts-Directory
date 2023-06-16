@@ -7,7 +7,7 @@ import com.sample.data.Repository
 import com.sample.data.entities.RelatedTopic
 
 
-class ListViewModel : ViewModel() {
+class SharedViewModel : ViewModel() {
     private val _currentCast = MutableLiveData<ArrayList<RelatedTopic>>(arrayListOf())
     val currentCast: LiveData<ArrayList<RelatedTopic>>
         get() = _currentCast

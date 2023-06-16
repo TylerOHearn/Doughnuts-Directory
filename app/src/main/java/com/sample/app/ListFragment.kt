@@ -15,7 +15,7 @@ import com.sample.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     private lateinit var binding: FragmentListBinding
-    private val viewModel: ListViewModel by viewModels(
+    private val viewModel: SharedViewModel by viewModels(
         ownerProducer = {requireActivity()}
     )
     private lateinit var adapter: RecyclerViewAdapter

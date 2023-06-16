@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.sample.app.ListViewModel" />
+            type="com.sample.app.SharedViewModel" />
 
         <import type="com.sample.formatting.StringUtil" />
 

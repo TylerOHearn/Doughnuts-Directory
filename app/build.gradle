@@ -32,15 +32,17 @@ android {
     productFlavors {
         Simpsons_Character_Viewer {
             dimension "version"
-            applicationIdSuffix ".simpsonsviewer"
+            applicationId "com.sample.simpsonsviewer"
             versionNameSuffix "-simpsonsviewer"
             buildConfigField "String", "URL", "\"simpsons+characters\""
+            resValue "string" , "app_name" , "Simpsons Character Viewer"
         }
         The_Wire_Character_Viewer {
             dimension "version"
-            applicationIdSuffix ".wireviewer"
+            applicationId "com.sample.wireviewer"
             versionNameSuffix "-wireviewer"
             buildConfigField "String", "URL", "\"the+wire+characters\""
+            resValue "string" , "app_name" , "The Wire Character Viewer"
         }
     }
 

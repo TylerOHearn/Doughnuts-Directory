@@ -14,7 +14,7 @@ import com.sample.data.entities.RelatedTopic
 
 class MainActivity : AppCompatActivity() {
     private lateinit var slidingPanel: SlidingPaneLayout
-    private val viewModel:ListViewModel by viewModels()
+    private val viewModel:SharedViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

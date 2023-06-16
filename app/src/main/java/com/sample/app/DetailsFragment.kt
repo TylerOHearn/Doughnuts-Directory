@@ -16,7 +16,7 @@ import com.sample.databinding.FragmentDetailsBinding
  * create an instance of this fragment.
  */
 class DetailsFragment : Fragment() {
-    private val viewModel: ListViewModel by viewModels(
+    private val viewModel: SharedViewModel by viewModels(
         ownerProducer = {requireActivity()}
     )
     private lateinit var binding: FragmentDetailsBinding
