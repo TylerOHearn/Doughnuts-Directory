@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.sample.R
 import com.sample.databinding.FragmentDetailsBinding
+import com.squareup.picasso.Picasso
 
 /**
  * A simple [Fragment] subclass.
@@ -32,6 +33,7 @@ class DetailsFragment : Fragment() {
         inflater.inflate(R.layout.fragment_details, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
         binding.lifecycleOwner = this
+        Picasso.get().load("https://duckduckgo.com/Ervin_Burrell/i/3beb0272.jpg").placeholder(R.drawable.donut_placeholder).centerCrop().fit().into(binding.characterDetailsImage)
         return binding.root
 
     }
