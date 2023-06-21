@@ -6,6 +6,17 @@ Built for a coding exercise, given by a potential client, this app is designed t
 
 Written in [Kotlin](https://kotlinlang.org/) using [MVVM](https://medium.com/swlh/understanding-mvvm-architecture-in-android-aa66f7e1a70b) architecture with [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel) and [LiveData](https://developer.android.com/topic/libraries/architecture/livedata), [Databinding](https://developer.android.com/topic/libraries/data-binding), [Fragments](https://developer.android.com/guide/fragments), [SlidingPaneLayout](https://developer.android.com/reference/androidx/slidingpanelayout/widget/SlidingPaneLayout), [Retrofit](https://square.github.io/retrofit/) consuming a [RESTful API](https://medium.com/android-news/consuming-rest-api-using-retrofit-library-in-android-ed47aef01ecb) and [Picasso](https://square.github.io/picasso/) for handling images. The App was written with best practices in mind.
 
+## Awaiting Feedback On
+
+According to instructions outlined in the coding exercise provided by the client, images are supposed to be used by calling the `Icon:{URL}` field in the JSON response data. The URL field returns an HTML element contained within the page, as opposed to the expected hosted image destination.
+Currently I am using a placeholder image until the client responds with how they would like me to ingest the image. I have two ways I can achieve the desired result, but both are different from the expectations outlined by the client directions.
+
+I could use [JSOUP](https://jsoup.org/) to parse and extract the elements, find the image, then call it back in the image loading process using Picasso when navigating to the DetailsView.
+
+I could alternatively use a WebView container to load the website, download the URLs HTML data as a String, use a formatUtil to parse the data for the `Icon:{URL}` in the JSON response, and extract the element at the location contained within the website HTML.
+
+Will update codebase with the requested method for loading the image when I heard back from the client.
+
 ## Client Requested Objectives
 
 * Needed to be written in Kotlin
