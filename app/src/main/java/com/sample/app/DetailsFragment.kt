@@ -33,9 +33,21 @@ class DetailsFragment : Fragment() {
         inflater.inflate(R.layout.fragment_details, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
         binding.lifecycleOwner = this
-        Picasso.get().load("https://duckduckgo.com/Ervin_Burrell/i/3beb0272.jpg").placeholder(R.drawable.donut_placeholder).centerCrop().fit().into(binding.characterDetailsImage)
+        characterImageLoad()
         return binding.root
 
+    }
+
+    /**
+     * Hard coding a test image URL, as I am waiting on feedback on how to implement image loading from API and URLs contained within.
+     * Researched ways to load images using JSOUP or WebView by targeting HTML elements on the webpage URL provided by JSON response.
+     * Did not implement as it did not match the instructions outlined in the coding exercise.
+     */
+    fun characterImageLoad() {
+        Picasso.get()
+            .load("https://duckduckgo.com/Ervin_Burrell/i/3beb0272.jpg")
+            .placeholder(R.drawable.donut_placeholder).centerCrop().fit()
+            .into(binding.characterDetailsImage)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
