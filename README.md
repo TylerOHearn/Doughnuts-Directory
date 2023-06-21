@@ -2,7 +2,7 @@
 <h4 align="center"> TV Character Index App</h4>
 
 ## Description
-Built for a coding exercise, given by a potential client, this app is designed to ingest API JSON response data and display TV show characters for The Simpsons and The Wire. 
+Built for a coding exercise, given by a potential client, this app is designed to ingest API JSON response data and display TV show characters for The Simpsons and The Wire.
 
 Written in [Kotlin](https://kotlinlang.org/) using [MVVM](https://medium.com/swlh/understanding-mvvm-architecture-in-android-aa66f7e1a70b) architecture with [ViewModels](https://developer.android.com/topic/libraries/architecture/viewmodel) and [LiveData](https://developer.android.com/topic/libraries/architecture/livedata), [Databinding](https://developer.android.com/topic/libraries/data-binding), [Fragments](https://developer.android.com/guide/fragments), [SlidingPaneLayout](https://developer.android.com/reference/androidx/slidingpanelayout/widget/SlidingPaneLayout), [Retrofit](https://square.github.io/retrofit/) consuming a [RESTful API](https://medium.com/android-news/consuming-rest-api-using-retrofit-library-in-android-ed47aef01ecb) and [Picasso](https://square.github.io/picasso/) for handling images. The App was written with best practices in mind.
 
@@ -51,7 +51,6 @@ Will update codebase with the requested method for loading the image when I hear
 
 ## Improvements
 * Currently showing placeholder for all images as API response for URL fields is broken.
-* Add a splash screen during app startup.
 * Rework subsequent searches to parse through initial characters list, not parse through previous search results.
 * Convert [XML](https://developer.android.com/develop/ui/views/layout/declaring-layout) to [Jetpack Compose](https://developer.android.com/jetpack/compose) after initial feedback from client. Client specifically requested to use XML as they are not currently using Jetpack Compose in their production apps.
 
