@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class RelatedTopic(
+data class Characters(
     @SerializedName("FirstURL")
     val firstURL: String,
     @SerializedName("Icon")

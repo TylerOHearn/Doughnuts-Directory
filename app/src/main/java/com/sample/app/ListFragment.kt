@@ -10,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sample.R
-import com.sample.data.entities.RelatedTopic
+import com.sample.data.entities.Characters
 import com.sample.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -40,11 +40,11 @@ class ListFragment : Fragment() {
 
             //viewModel = ViewModelProvider(requireActivity())[ListViewModel::class.java]
 
-        val castObserver = Observer<ArrayList<RelatedTopic>> { newCast ->
+        val castObserver = Observer<ArrayList<Characters>> { newCast ->
             adapter = RecyclerViewAdapter(newCast)
             adapter.setOnClickListener(object :
                 RecyclerViewAdapter.OnClickListener {
-                    override fun onClick(character: RelatedTopic) {
+                    override fun onClick(character: Characters) {
                         viewModel.setSelectedCharacter(character)
                         (activity as MainActivity).openPanel()
                     }

@@ -7,10 +7,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sample.R
-import com.sample.data.entities.RelatedTopic
+import com.sample.data.entities.Characters
 import com.sample.formatting.StringUtil
 
-class RecyclerViewAdapter (private var cast: ArrayList<RelatedTopic>) : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
+class RecyclerViewAdapter (private var cast: ArrayList<Characters>) : RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
 
     private var onClickListener: OnClickListener? = null
 
@@ -46,7 +46,7 @@ class RecyclerViewAdapter (private var cast: ArrayList<RelatedTopic>) : Recycler
     }
 
     interface OnClickListener {
-        fun onClick(character: RelatedTopic)
+        fun onClick(character: Characters)
     }
 
     class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {

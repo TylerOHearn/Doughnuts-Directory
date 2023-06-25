@@ -7,5 +7,5 @@ data class TvShowData(
     @SerializedName("Heading")
     val heading: String,
     @SerializedName("RelatedTopics")
-    val relatedTopics: List<RelatedTopic>
+    val characters: List<Characters>
 )

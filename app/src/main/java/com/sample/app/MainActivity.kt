@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.slidingpanelayout.widget.SlidingPaneLayout
 import com.sample.BuildConfig
 import com.sample.R
-import com.sample.data.entities.RelatedTopic
+import com.sample.data.entities.Characters
 
 class MainActivity : AppCompatActivity() {
     private lateinit var slidingPanel: SlidingPaneLayout
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         if (Intent.ACTION_SEARCH == intent.action) {
             intent.getStringExtra(SearchManager.QUERY)?.also { query ->
-                val fullCast: ArrayList<RelatedTopic> = intent?.getBundleExtra(SearchManager.APP_DATA)?.getParcelableArrayList(("listCast")) ?: ArrayList<RelatedTopic>()
+                val fullCast: ArrayList<Characters> = intent?.getBundleExtra(SearchManager.APP_DATA)?.getParcelableArrayList(("listCast")) ?: ArrayList<Characters>()
                 val results = getSearchResults(query, fullCast)
                 results?.let {
                     viewModel.setCurrentCast(it)
@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun getSearchResults(query: String, fullCast: ArrayList<RelatedTopic>): ArrayList<RelatedTopic>? {
+    fun getSearchResults(query: String, fullCast: ArrayList<Characters>): ArrayList<Characters>? {
         //filter stuff here
-        var filterList: ArrayList<RelatedTopic> = fullCast
+        var filterList: ArrayList<Characters> = fullCast
         filterList = ArrayList(filterList.filter {
             it.text.contains(query, true)
         })
