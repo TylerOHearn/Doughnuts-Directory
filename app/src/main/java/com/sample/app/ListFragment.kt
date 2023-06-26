@@ -23,12 +23,8 @@ class ListFragment : Fragment() {
     companion object {
         fun newInstance() = ListFragment()
     }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
+//fun onCreateView is using binding as a view lookup similar to findViewbyID
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?, ): View {
         inflater.inflate(R.layout.fragment_list, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_list, container, false)
         binding.lifecycleOwner = this
