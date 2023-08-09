@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.sample.R
+import com.sample.data.entities.Characters
 import com.sample.databinding.FragmentDetailsBinding
 import com.squareup.picasso.Picasso
 
@@ -33,20 +34,14 @@ class DetailsFragment : Fragment() {
         inflater.inflate(R.layout.fragment_details, container, false)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
         binding.lifecycleOwner = this
-        characterImageLoad()
         return binding.root
 
     }
 
-    /**
-     * Hard coding a test image URL, as I am waiting on feedback on how to implement image loading from API and URLs contained within.
-     * Researched ways to load images using JSOUP or WebView by targeting HTML elements on the webpage URL provided by JSON response.
-     * Did not implement as it did not match the instructions outlined in the coding exercise.
-     */
-    fun characterImageLoad() {
-        Picasso.get()
-            .load("https://duckduckgo.com/Ervin_Burrell/i/3beb0272.jpg")
-            .placeholder(R.drawable.donut_placeholder).centerCrop().fit()
+    fun characterImageLoad(character: Characters) {
+            Picasso.get()
+            .load("https://duckduckgo.com/" + character.icon.uRL)
+            .placeholder(R.drawable.donut_placeholder).centerInside().fit()
             .into(binding.characterDetailsImage)
     }
 
@@ -55,6 +50,10 @@ class DetailsFragment : Fragment() {
 
         //viewModel = ViewModelProvider(requireActivity())[ListViewModel::class.java]
         binding.viewModel=viewModel
+
+        viewModel.characterSelected.observe(viewLifecycleOwner) {
+            characterImageLoad(it)
+        }
     }
 
     companion object {

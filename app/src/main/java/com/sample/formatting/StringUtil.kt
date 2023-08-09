@@ -13,7 +13,7 @@ object StringUtil {
     }
 
     @JvmStatic
-    fun formatDesciption(text: String?) : String {
+    fun formatDescription(text: String?) : String {
         text?.let {
             val delim = " - "
             val list = text.split(delim)
